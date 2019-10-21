@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :edit, :update]
+  before_action :check_user_belongs_to_current_user, only: [:edit, :update]
+
   def show
-    @user = User.find(params[:id])
+
     @posts = @user.posts
     @pages = @user.pages
   end
@@ -26,9 +29,27 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update
+
+    @user.update(user_params(:username))
+    redirect_to @user
+  end
+
   private
 
   def user_params(*args)
     params.require(:user).permit(*args)
+  end
+
+  def check_user_belongs_to_current_user
+
+    unless find_user == current_user
+      #flashy boy
+      redirect_to find_user
+    end
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 end

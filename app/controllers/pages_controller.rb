@@ -14,7 +14,9 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.create(page_params(:title,:content,:user_id))
+    @page = Page.create(page_params(:title,:content))
+    @page.user_id = current_user.id
+    @page.save
     redirect_to @page
   end
 
