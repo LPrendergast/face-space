@@ -1,0 +1,4 @@
+<h1><%=@post.title%></h1>
+<h1><%=@post.content%></h1>
+<h1><%=link_to @post.user.username, user_path(@post.user)%></h1>
+<h1><%=link_to @post.page.title, page_path(@post.page)%></h1>
