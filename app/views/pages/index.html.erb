@@ -1,0 +1,6 @@
+<% @pages.each do |page| %>
+
+<h1><%= page.title %></h1>
+<p>Author: <%= link_to page.user.username, user_path(page.user) %></p>
+<p><%= page.content %></p>
+<% end %>
