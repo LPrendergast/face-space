@@ -5,16 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if current_user %>
       <h3>You're logged in as: <%= current_user.username%></h3>
-      <%= link_to "Log out", '/login', method: :delete, action: :destroy%>
+      <%= link_to "Log out", '/login', method: :delete%>
     <% else %>
       <%= link_to "Login", new_session_path %>
     <% end %>
+
     <%= yield %>
   </body>
 </html>
