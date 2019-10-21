@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, except:[:destroy]
+  resources :users, except:[:destroy, :new]
   resources :pages
   resources :posts
 
-  get '/login', to: 'sessions#new', as:"new_session"
-  post '/login', to: 'sessions#create', as: "sessions"
-  delete '/login', to: 'sessions#destroy', as: "logout"
+  get '/', to: 'sessions#new', as:"new_session"
+  post '/', to: 'sessions#create', as: "sessions"
+  delete '/', to: 'sessions#destroy', as: "logout"
+
+  get '/signup', to: 'users#new', as: "sign_up"
 
 end

@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 
-  def new
-    byebug
+  def new #Defensive programming bad
+    if !current_user
+      render :new
+    else
+      redirect_to current_user
+    end
   end
 
   def create
@@ -15,9 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    byebug
     session.destroy
     redirect_to new_session_path
   end
-
 end

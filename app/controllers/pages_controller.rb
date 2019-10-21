@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
+  before_action :check_page_belongs_to_user, only: [:edit, :update, :destroy]
+  before_action :find_page, only: [:show, :edit, :update, :destroy]
+
   def show
-    @page = Page.find(params[:id])
   end
 
   def index
@@ -17,16 +19,15 @@ class PagesController < ApplicationController
   end
 
   def edit
-    @page = Page.find(params[:id])
   end
 
   def update
-    @page = Page.find(params[:id])
-    @page.update(page_params(:title,:content,:user_id))
+    @page.update(page_params(:title,:content))
+    redirect_to @page
   end
 
   def destroy
-    @page = Page.find(params[:id])
+
     @page.delete
     redirect_to pages_path
   end
@@ -35,5 +36,16 @@ class PagesController < ApplicationController
 
   def page_params(*args)
     params.require(:page).permit(*args)
+  end
+
+  def check_page_belongs_to_user
+    unless find_page.user == current_user
+      #flashy boy
+      redirect_to pages_path
+    end
+  end
+
+  def find_page
+     @page = Page.find(params[:id])
   end
 end

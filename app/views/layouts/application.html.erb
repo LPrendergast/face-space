@@ -12,9 +12,12 @@
   <body>
     <% if current_user %>
       <h3>You're logged in as: <%= current_user.username%></h3>
-      <%= link_to "Log out", '/login', method: :delete%>
-    <% else %>
-      <%= link_to "Login", new_session_path %>
+      <nav>
+      <%= link_to "Log out", logout_path, method: :delete%>
+      <%= link_to "User page", user_path(current_user)%>
+      <%= link_to "View Users", users_path%>
+      <%= link_to "View Pages", pages_path%>
+      </nav>
     <% end %>
 
     <%= yield %>
