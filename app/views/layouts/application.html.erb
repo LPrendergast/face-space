@@ -10,16 +10,66 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <h3>You're logged in as: <%= current_user.username%></h3>
-      <nav>
-      <%= link_to "Log out", logout_path, method: :delete%>
-      <%= link_to "User page", user_path(current_user)%>
-      <%= link_to "View Users", users_path%>
-      <%= link_to "View Pages", pages_path%>
-      </nav>
-    <% end %>
+    <div class="global_container">
 
+
+    <div class="top_container">
+      <%= image_tag("logo.png") %>
+      <% if current_user %>
+      <ul>
+        <li id="logged_in_as">You're logged in as: <%= current_user.username%></li>
+        <li><%= link_to "User page", user_path(current_user)%></li>
+        <li><%= link_to "View Users", users_path%></li>
+        <li><%= link_to "View Pages", pages_path%></li>
+        <li><%= link_to "Log out", logout_path, method: :delete%></li>
+      </ul>
+      <% end %>
+    </div>
+
+
+
+<div class="body_container">
+  <div class="wrapper">
+
+  <div class="column" id="left">
+    <div class= "left-box" id="user-info">
+      <h1>sd</h1>
+      </div>
+
+      <div class="left-box" id="messages" >
+        <h1>ds</h1>
+        </div>
+  </div>
+
+  <div class="column" id="middle">
     <%= yield %>
+  </div>
+
+  <div class="column" id="right">
+    <div class= "right-box" id="log-in">
+        <h1>ps</h1>
+      </div>
+
+      <div class= "right-box" id="friends-list">
+          <h1>sp</h1>
+        </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="footer_container">
+  <% if current_user %>
+  <ul>
+    <li><%= link_to "Log out", logout_path, method: :delete%></li>
+  </ul>
+  <% end %>
+</div>
+
+
+
+  </div>
+
   </body>
 </html>
