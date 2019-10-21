@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :find_page, only: [:show, :edit, :update, :destroy]
 
   def show
+    @posts = @page.posts
   end
 
   def index
@@ -29,8 +30,7 @@ class PagesController < ApplicationController
   end
 
   def destroy
-
-    @page.delete
+    @page.destroy
     redirect_to pages_path
   end
 
