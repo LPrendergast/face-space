@@ -1,16 +1,16 @@
-<h1> <%= @user.username %></h1>
+<h1>Username: <%=@user.username %></h1><br>
 
 <% if @user == current_user %>
 <%=link_to "Edit User", edit_user_path(@user)%>
 <% end %>
 
-<h1> Pages: </h1>
+<br><h1> Pages: </h1>
 <%@pages.each do |page| %>
-<h1><%=link_to page.title, page_path(page)%></h1>
+<h1>Page: <%=link_to page.title, page_path(page)%></h1>
 <%end%>
 
 
-<h1> Posts: </h1>
+<br><h1> Posts: </h1>
 <%@posts.each do |post| %>
-<h1><%=link_to post.title, post_path(post)%></h1>
+<h1>Post: <%=link_to post.title, post_path(post)%></h1>
 <%end%>
