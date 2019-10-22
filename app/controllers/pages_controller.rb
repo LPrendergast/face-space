@@ -15,10 +15,15 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.create(page_params(:title,:content))
+    @page = Page.new(page_params(:title,:content))
     @page.user_id = current_user.id
+    
+    if @page.valid?
     @page.save
     redirect_to @page
+    else
+      render :new
+    end
   end
 
   def edit
@@ -26,7 +31,11 @@ class PagesController < ApplicationController
 
   def update
     @page.update(page_params(:title,:content))
+    if @page.valid?
     redirect_to @page
+    else
+      render :edit
+    end
   end
 
   def destroy

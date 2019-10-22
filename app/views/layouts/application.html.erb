@@ -7,56 +7,49 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <div class="global_container">
 
-
     <div class="top_container">
-      <%= image_tag("logo.png") %>
-      <% if current_user %>
-      <ul>
-        <li id="logged_in_as">You're logged in as: <%= current_user.username%></li>
-        <li><%= link_to "User page", user_path(current_user)%></li>
-        <li><%= link_to "View Users", users_path%></li>
-        <li><%= link_to "View Pages", pages_path%></li>
-        <li><%= link_to "Log out", logout_path, method: :delete%></li>
-      </ul>
-      <% end %>
+    <%= render 'layouts/navigation'%>
     </div>
 
 
+<div class="wrapper">
+    <section class="columns">
+    <div class="column" id="left">
+      <div class= "left-box" id="user-info">
+        <h1><%=render "users/user_info"%></h1>
+      </div>
 
-<div class="body_container">
-  <div class="wrapper">
-
-  <div class="column" id="left">
-    <div class= "left-box" id="user-info">
-      <h1><%=render "users/user_info"%></h1>
+      <div class="left-box" id="messages" >
+        <h1></h1>
+      </div>
     </div>
 
-    <div class="left-box" id="messages" >
-      <h1></h1>
+    <div class="column" id="middle">
+      <%= yield %>
     </div>
-  </div>
-
-  <div class="column" id="middle">
-    <%= yield %>
-  </div>
-
-  <div class="column" id="right">
-    <div class= "right-box" id="log-in">
-      <h1>ps</h1>
+    <div class="column" id="right">
+      <div class= "right-box" id="log-in">
+        <h1>
+        <%if current_user %>
+          <%="Hello " + current_user.username%>
+        <%else%>
+          <%=render "sessions/login"%>
+        <%end%>
+        </h1>
+      </div>
+      <div class= "right-box" id="friends-list">
+        <h1>@friends_info</h1>
+      </div>
     </div>
-
-    <div class= "right-box" id="friends-list">
-      <h1>@friends_info</h1>
-    </div>
-  </div>
-
-  </div>
+    </section>
 </div>
+
 
 
 <div class="footer_container">
@@ -66,10 +59,6 @@
   </ul>
   <% end %>
 </div>
-
-
-
   </div>
-
   </body>
 </html>

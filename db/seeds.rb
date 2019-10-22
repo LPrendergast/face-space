@@ -1,8 +1,8 @@
-user1 = User.create(username: "Kane")
-user2 = User.create(username: "Tim")
-user3 = User.create(username: "Luke")
-user4 = User.create(username: "Michael")
-user5 = User.create(username: "Marco")
+user1 = User.create(username: "Kane", password: "123")
+user2 = User.create(username: "Tim", password: "123")
+user3 = User.create(username: "Luke", password: "123")
+user4 = User.create(username: "Michael", password: "123")
+user5 = User.create(username: "Marco", password: "123")
 
 
 

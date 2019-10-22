@@ -1,25 +1,17 @@
 class SessionsController < ApplicationController
 
-  def new #Defensive programming bad
-    if !current_user
-      render :new
-    else
-      redirect_to current_user
-    end
-  end
-
   def create
     @user = User.find_by(username: params[:user][:username])
-    if @user
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to @user
     else
-      redirect_to new_session_path
+      redirect_to request.referrer
     end
   end
 
   def destroy
     session.destroy
-    redirect_to new_session_path
+    redirect_to request.referrer
   end
 end

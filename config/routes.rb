@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :posts
 
-  get '/', to: 'sessions#new', as:"new_session"
+  
   post '/', to: 'sessions#create', as: "sessions"
   delete '/', to: 'sessions#destroy', as: "logout"
 
