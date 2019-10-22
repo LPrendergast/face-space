@@ -11,14 +11,19 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
   end
 
   def create
-    @post = Post.new(post_params(:title, :content,:page_id))
+
+    @post = Post.new(post_params(:title, :content, :page_id))
     @post.user_id = current_user.id
+    if @post.valid?
     @post.save
     redirect_to page_path(@post.page)
+    else
+      
+      render '_form', :locals => { page_id: params[:post][:page_id] }
+    end
   end
 
   def edit
@@ -26,7 +31,12 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params(:title, :content))
+    if @post.valid?
     redirect_to page_path(@post.page)
+    else
+      render :edit
+    end
+
   end
 
   def destroy

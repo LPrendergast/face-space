@@ -22,17 +22,25 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params(:username))
+    if @user.valid?
     session[:user_id] = @user.id
     redirect_to @user
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-
     @user.update(user_params(:username))
+    if @user.valid?
     redirect_to @user
+    else
+    render :edit
+
+    end
   end
 
   private

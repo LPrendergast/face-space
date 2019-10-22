@@ -1,8 +1,18 @@
+<%if @post.errors.messages.length > 0%>
+    <h1><%="There where some errors: "%></h1>
+    <% @post.errors.full_messages.each do |msg|%>
+    <%=msg%><br>
+    <%end%>
+<%end%>
+
 <%= form_for @post do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :content %>
 <%= f.text_area :content %>
-<%= f.hidden_field(:page_id, :value => params[:page_id])%>
+<%if params[:page_id] || defined?(page_id) %>
+<%= f.hidden_field(:page_id, :value => params[:page_id] || page_id)%>
+<%end%>
+
 <%= f.submit "Submit Post" %>
 <% end %>

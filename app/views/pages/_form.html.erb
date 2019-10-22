@@ -1,3 +1,10 @@
+<%if @page.errors.messages.length > 0%>
+    <h1><%="There where some errors: "%></h1>
+    <% @page.errors.full_messages.each do |msg|%>
+    <%=msg%><br>
+    <%end%>
+<%end%>
+
 <%=form_for(@page) do |f| %>
 <%=f.label :title%>
 <%=f.text_field :title%>
