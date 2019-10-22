@@ -27,8 +27,16 @@
       <%end%>
       </div>
 
+      <div class="filler">
+
+      </div>
+
       <div class="left-box" id="messages" >
-        <h1></h1>
+        <h1>Message box</h1>
+      </div>
+
+      <div class="filler">
+
       </div>
     </div>
 
@@ -36,6 +44,7 @@
       <%= yield %>
     </div>
     <div class="column" id="right">
+
       <div class= "right-box" id="log-in">
         <h1>
         <%if current_user %>
@@ -45,9 +54,19 @@
         <%end%>
         </h1>
       </div>
+      
+      <div class="filler">
+
+      </div>
+
       <div class= "right-box" id="friends-list">
         <h1>@friends_info</h1>
       </div>
+
+      <div class="filler">
+
+      </div>
+
     </div>
     </section>
 </div>
