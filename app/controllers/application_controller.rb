@@ -24,4 +24,6 @@ class ApplicationController < ActionController::Base
     @current_user_name = current_user.username
     end
   end
+
+
 end
