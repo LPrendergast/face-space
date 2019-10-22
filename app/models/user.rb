@@ -3,4 +3,8 @@ class User < ApplicationRecord
   has_many :pages, :dependent => :destroy
   validates :username, presence: true, uniqueness: true, length: {minimum: 3}
   has_secure_password
+
+  def get_pages
+    Pages.find_by(user: self)
+  end
 end

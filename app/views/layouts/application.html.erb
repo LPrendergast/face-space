@@ -22,7 +22,9 @@
     <section class="columns">
     <div class="column" id="left">
       <div class= "left-box" id="user-info">
+      <%if current_user%>
         <h1><%=render "users/user_info"%></h1>
+      <%end%>
       </div>
 
       <div class="left-box" id="messages" >

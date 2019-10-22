@@ -1,4 +1,4 @@
-user1 = User.create(username: "Kane", password: "123")
+user1 = User.create(username: "Kane", password: "123", bio: "lknsd", age: 7, country: "Australia", city: "Syndey", phone_number: "111-111-111-111", hobbies: "Climbing, Being australian" )
 user2 = User.create(username: "Tim", password: "123")
 user3 = User.create(username: "Luke", password: "123")
 user4 = User.create(username: "Michael", password: "123")

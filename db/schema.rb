@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2019_10_21_084047) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "bio"
+    t.string "hobbies"
+    t.integer "age"
+    t.string "country"
+    t.string "city"
+    t.string "phone_number"
+    t.string "image_url", default: "https://252radio.com/wp-content/uploads/2016/11/default-user-image-300x300.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
