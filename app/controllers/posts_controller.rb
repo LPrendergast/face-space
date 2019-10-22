@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    #byebug
+    
   end
 
   def create
