@@ -74,6 +74,10 @@ class User < ApplicationRecord
     frienders.include?(current_user)
   end
 
+  def friend_count
+    friends.count
+  end
+
 
 
   
