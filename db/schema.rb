@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_164857) do
   create_table "messages", force: :cascade do |t|
     t.integer "friendship_id"
     t.string "content"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

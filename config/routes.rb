@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   resources :users, except:[:destroy, :new]
   resources :pages
   resources :posts
+  resources :messages, only: [:new,:create,:index]
 
   
   post '/', to: 'sessions#create', as: "sessions"
   delete '/', to: 'sessions#destroy', as: "logout"
 
   get '/signup', to: 'users#new', as: "sign_up"
+
+  post '/friendships', to: 'friendships#create', as: "add_friend"
 
 end
