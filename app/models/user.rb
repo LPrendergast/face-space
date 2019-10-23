@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
 
   validates :username, presence: true, uniqueness: true, length: {minimum: 3}
+  validates :password, presence: true, length: {minimum: 3}
+
   has_secure_password
 
   def get_pages
@@ -72,6 +74,10 @@ class User < ApplicationRecord
 
   def friend?(current_user)
     frienders.include?(current_user)
+  end
+
+  def friend_count
+    friends.count
   end
 
 
