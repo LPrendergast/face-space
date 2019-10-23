@@ -1,4 +1,4 @@
-user1 = User.create(username: "Kane", password: "123", bio: "lknsd", age: 7, country: "Australia", city: "Syndey", phone_number: "111-111-111-111", hobbies: "Climbing, Being australian" )
+user1 = User.create(username: "Kane", password: "123", bio: "lknsd", age: 7, country: "Australia", city: "Syndey", phone_number: "111-111-111-111", hobbies: "Climbing, Being australian", image_url:"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/10359216_414010462071550_3029500015841816196_n.jpg?_nc_cat=102&_nc_oc=AQmEeOWqDUVxOY1x4vM7-6H1uSQ0XrXX4y4UZtqhifZmlEnO129e9o-NYE0mTbnZs_4&_nc_ht=scontent-lht6-1.xx&oh=5b827e1f7f895da44c687593a4a1f47d&oe=5E2C20D7")
 user2 = User.create(username: "Tim", password: "123")
 user3 = User.create(username: "Luke", password: "123")
 user4 = User.create(username: "Michael", password: "123")

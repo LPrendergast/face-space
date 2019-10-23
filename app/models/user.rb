@@ -26,13 +26,55 @@ class User < ApplicationRecord
     friendships
   end
 
-  def messages
-    friendships.map {|friendship| friendship.messages}
+  def sent_request
+    friendee
+  end
+
+  def friends
+    friends = []
+    friender_users.each do |friendee|
+      friendee_users.each do |friender|
+        if friender.friender_id == friendee.friendee_id && friender.friendee_id == friendee.friender_id
+          friends << User.find(friender.friender_id)
+        end
+    end
+  end
+  
+  friends
+  end
+
+  def recieved_request
+    frienders
+  end
+
+  def messages(friend)
+    messages = []
+    find_friendships(friend).each {|friendship| friendship.messages.each {|message| messages << message}}
+    messages.sort_by{|message| message.format_time_for_sort}.last(8)
+  end
+
+
+
+  def find_friendships(friend)
+    get_friendship(User.get_friend(friend))
+  end
+
+  def self.get_friend(friend)
+    self.find(friend)
+  end
+
+  def get_friendship(friend)
+    friendships = []
+    friendships << Friendship.find{|friendship| friendship.friender_id == self.id && friendship.friendee_id == friend.id }
+    friendships << Friendship.find{|friendship| friendship.friendee_id == self.id && friendship.friender_id == friend.id }
+    friendships
   end
 
   def friend?(current_user)
     frienders.include?(current_user)
   end
+
+
 
   
 

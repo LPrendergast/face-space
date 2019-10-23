@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to request.referrer
+    redirect_to pages_path
   end
 end

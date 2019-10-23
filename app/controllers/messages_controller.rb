@@ -1,13 +1,16 @@
 class MessagesController < ApplicationController
-    def new 
-        @message = Message.new
-        render partial:'form'
+    
+    
+    def index
+        @messages = Message.all
     end
 
     def create
+        
         @message = Message.create(message_params)
         @message.user_id =  current_user.id
         @message.save
+        
         redirect_to request.referrer
         end
 

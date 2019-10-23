@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, except:[:destroy, :new]
   resources :pages
   resources :posts
-  resources :messages, only: [:new,:create,:index]
+  resources :messages, only: [:create,:index]
 
   
   post '/', to: 'sessions#create', as: "sessions"

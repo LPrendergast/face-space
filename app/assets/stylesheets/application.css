@@ -17,11 +17,15 @@ img {
 .left-box {
 	border: solid black 4px;
 	width: 100%;
+	
+	overflow:hidden;
 }
 
 .right-box {
 	border: solid black 4px;
 	width: 100%;
+	
+	overflow:hidden;
 }
 
 .filler {
