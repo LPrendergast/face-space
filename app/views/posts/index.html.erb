@@ -1,6 +1,0 @@
-<% @posts.each do |post| %>
-  <h1>Title: <%=link_to post.title, post_path(post)%></h1>
-  <h1>Content: <%=post.content%></h1>
-  <h1>User: <%=link_to post.user.username, user_path(post.user)%></h1>
-  <h1>Page: <%=link_to post.page.title, page_path(post.page)%></h1><br>
-<%end%>
