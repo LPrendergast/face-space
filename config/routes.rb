@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :posts
   resources :messages, only: [:create,:index]
+  resources :friendships, only: [:destroy]
 
   
   post '/', to: 'sessions#create', as: "sessions"
