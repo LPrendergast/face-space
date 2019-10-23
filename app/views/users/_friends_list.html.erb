@@ -1,0 +1,3 @@
+<% current_user.friends.each do |friend|%>
+<h1><%= link_to friend.username, user_path(friend)%> - <%=link_to "Message", messages_path(friend: friend)%></h1>
+<% end %>

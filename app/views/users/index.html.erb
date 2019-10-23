@@ -1,3 +1,9 @@
 <% @users.each do |user| %>
-<h1>Username: <%=link_to user.username, user_path(user) %></h1><br>
+    <h1>Username: <%=link_to user.username, user_path(user) %></h1><br>
+
+    <%if current_user%>
+    <%unless user.friend?(current_user) || user == current_user%>
+        <%= link_to "Add Friend.", add_friend_path(:user=>{friendee_id: user.id, friender_id: current_user.id}), method: :post%>
+    <%end%>
+    <%end%>
 <%end%>
