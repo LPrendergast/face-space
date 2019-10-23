@@ -1,12 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import '~bootstrap/scss/bootstrap';@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-* { 
-	box-sizing: border-box; 
+* {
+	box-sizing: border-box;
 	text-align: center;
 }
 
+#logo-tag{
+	font-family: 'Helvetica', sans-serif;
+}
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   color: #666;
 }
 img {
@@ -17,14 +20,14 @@ img {
 .left-box {
 	border: solid black 4px;
 	width: 100%;
-	
+
 	overflow:hidden;
 }
 
 .right-box {
 	border: solid black 4px;
 	width: 100%;
-	
+
 	overflow:hidden;
 }
 
@@ -34,6 +37,7 @@ img {
 
 
 #logo-tag{
+	font-family: 'Helvetica', sans-serif;
   font-size: 100px;
   color: white;
   background-color: #3b5998 ;
@@ -87,45 +91,28 @@ header {
 }
 
 .column {
-	
+
 	border: 1px solid gray;
 	margin: 2px;
 	padding: 10px;
 	width: 25%;
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
-
 
 }
 #middle{
-	width: 45%;	
+	width: 45%;
 }
 
-footer {
+.footer_container {
 	padding: 0 15px;
+	background-color: #3b5998;
 }
 
-
-@media screen and (max-width: 980px) {
-  .columns .column {
-		margin-bottom: 5px;
-		width: 100%;
-		&:nth-last-child(2) {
-			margin-right: 0;
-		}
-		&:last-child {
-			flex-basis: 100%;
-			margin: 0;
-		}
-	}
+#footer_logo{
+	text-align: left;
+	color:white;
+	padding: 20px 20px 20px 20px;
 }
 
-@media screen and (max-width: 680px) {
-	.columns .column {
-		
-		margin: 0 0 5px 0;
-	}
-}
 
 #show-img {
 	height: auto;

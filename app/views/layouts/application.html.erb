@@ -26,8 +26,6 @@
         <h1><%=render "users/user_info"%></h1>
       <%end%>
       </div>
-
-  
     </div>
 
     <div class="column" id="middle">
@@ -44,7 +42,7 @@
         <%end%>
         </h1>
       </div>
-      
+
       <div class="filler">
 
       </div>
@@ -63,11 +61,7 @@
 
 
 <div class="footer_container">
-  <% if current_user %>
-  <ul>
-    <li><%= link_to "Log out", logout_path, method: :delete%></li>
-  </ul>
-  <% end %>
+ <%= render 'layouts/footer'%>
 </div>
   </div>
   </body>
