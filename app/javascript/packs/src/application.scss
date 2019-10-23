@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 	text-align: center;
 }
+.global_container{
+
+}
 
 #logo-tag{
 	font-family: 'Helvetica', sans-serif;
@@ -18,22 +21,17 @@ img {
 }
 
 .left-box {
-	border: solid black 4px;
 	width: 100%;
 
 	overflow:hidden;
 }
 
 .right-box {
-	border: solid black 4px;
 	width: 100%;
 
 	overflow:hidden;
 }
 
-.filler {
-	height: 30%;
-}
 
 
 #logo-tag{
@@ -86,13 +84,13 @@ header {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	width: 100%;  /*used to not exist*/
+	width: 100%;
 	margin: 5px 0;
 }
 
 .column {
 
-	border: 1px solid gray;
+	border: 1px solid #3b5998;
 	margin: 2px;
 	padding: 10px;
 	width: 25%;
