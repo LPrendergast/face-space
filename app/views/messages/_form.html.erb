@@ -1,0 +1,6 @@
+<%= form_for @message do |f|%>
+<%= f.label :content%>
+<%= f.text_area :content%>
+<%= f.collection_select :friendship_id, current_user.friendships, :id, :friendee_id%>
+<%= f.submit %>
+<% end %>

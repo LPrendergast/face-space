@@ -19,3 +19,5 @@ post4 = Post.create(title: "I am not not not great.", content: "Cheese and onion
 post5 = Post.create(title: "I am not not not not great.", content: "YUP", user_id:user3.id, page_id: page4.id)
 post6 = Post.create(title: "I am not not not not not great.", content: "I can never remember how to spell separate.", user_id:user4.id, page_id: page5.id)
 post7 = Post.create(title: "I am not not not not not not great.", content: "B-e-aaaaaaayutiful", user_id:user5.id, page_id: page5.id)
+
+
