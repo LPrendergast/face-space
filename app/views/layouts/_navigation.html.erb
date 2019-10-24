@@ -1,9 +1,12 @@
-    <ul class = "nav">
-      <h1 id="logo-tag"><a class="fa fa-facebook"></a>aceSpace</h1>
-        <% if current_user#need to control what navbars are shown when logged in or not %>
-          <li><%= link_to "Log out", logout_path, method: :delete%></li>
-          <li><%= link_to "User page", user_path(current_user)%></li>
-          <% end %>
-          <li><%= link_to "View Users", users_path%></li>
-          <li><%= link_to "View Pages", pages_path%></li>
-      </ul>
+<ul class = "nav">
+  <h1 id="logo-tag"><a class="fa fa-facebook"></a>aceSpace</h1>
+
+      <li><%= link_to "View Users", users_path%></li>
+      <li><%= link_to "View Pages", pages_path%></li>
+      <li><%= link_to 'Analytics Page', analytics_show_path%></li>
+      <% if current_user#need to control what navbars are shown when logged in or not %>
+
+        <li><%= link_to "Profile", user_path(current_user)%></li>
+        <li><%= link_to "Log out", logout_path, method: :delete%></li>
+        <% end %>
+  </ul>

@@ -1,21 +1,21 @@
 <h1>Username: <%=@user.username %></h1><br>
 <img src=<%=@user.image_url%> id=show-img">
-<p><%= @user.bio %> Age:<%= @user.age %></p> 
+<p><%= @user.bio %> Age:<%= @user.age %></p>
 <p><%= @user.hobbies %></p>
 <p><%= @user.country %>,<%= @user.city %></p>
 <p><%= @user.phone_number %></p>
 
 <% if @user == current_user %>
-<%=button_to "Edit User", edit_user_path(@user), method: :get%>
+<%=button_to "Edit User", edit_user_path(@user), :class => "btn",method: :get%>
 <% end %>
 
 <br><h1> <%= @user.username%>'s Pages: </h1>
 <%@pages.each do |page| %>
-<h1>Page: <%=link_to page.title, page_path(page)%></h1>
+<h2><%=link_to page.title, page_path(page)%></h2>
 <%end%>
 
 
 <br><h1> Posts: </h1>
 <%@posts.each do |post| %>
-<h1>Post: <%=post.title%></h1>
+<h2><%=post.title%></h2>
 <%end%>

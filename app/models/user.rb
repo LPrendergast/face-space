@@ -37,8 +37,6 @@ class User < ApplicationRecord
     pages.sum{|page| page.views}
   end
 
-  
-
 
   def friendships
     friendships = []
@@ -60,7 +58,7 @@ class User < ApplicationRecord
         end
     end
   end
-  
+
   friends
   end
 
@@ -99,8 +97,5 @@ class User < ApplicationRecord
     friends.count
   end
 
-
-
-  
 
 end

@@ -5,6 +5,6 @@
       <%= label :user, :password %>
       <%= password_field :user, :password %>
 
-      <%= submit_tag "Log in"%>
+      <%= submit_tag "Log in", :class => "btn"%>
   <% end %>
-  <%=link_to "Sign Up", sign_up_path%>
+  <%=link_to "Sign Up", sign_up_path,:class => "btn"%>
