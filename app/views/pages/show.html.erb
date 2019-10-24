@@ -4,13 +4,15 @@
 
 <h3>Posts: </h3>
 <% @posts.each do |post| %>
-<h3>Title: <%= post.title%></h3>
+<h3>Post: <%= post.title%><h3>
+<h2><%=link_to post.user.username, user_path(post.user)%></h2>
+<p><%= post.content %></p>
 <% if post.user == current_user || @page.user == current_user %>
 <%= button_to "Edit post.", edit_post_path, :class => "btn",method: :get%>
 <%= button_to "Delete post.", post_path(post), :class => "btn",method: :delete %>
 <% end %>
-<h2><%=link_to post.user.username, user_path(post.user)%></h2>
-<p><%= post.content %></p><br>
+
+<br>
 <%end%>
 
 <% if @page.user == current_user %>
