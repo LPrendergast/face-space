@@ -1,7 +1,16 @@
+<%= render 'search'%>
+<%if current_user%>
 <%= link_to "Create Page", new_page_path%><br>
+<%end%>
+<% if @pages != []%>
 <% @pages.each do |page| %>
 
 <h1>Title: <%= link_to page.title, page_path(page) %></h1>
 <p>Author: <%= link_to page.user.username, user_path(page.user) %></p>
 <p>Content: <%= page.content %></p><br>
+
 <% end %>
+
+<%else%>
+<h1>We could not find any pages!</h1>
+<%end%>

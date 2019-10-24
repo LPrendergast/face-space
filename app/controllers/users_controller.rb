@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     @pages = @user.pages
   end
 
+  def search
+    @users = User.all.where("username LIKE ?", "#{params[:search]}%")
+    render :index
+  end
+
   def index
     @users = User.all
   end
