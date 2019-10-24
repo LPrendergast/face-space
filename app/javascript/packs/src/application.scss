@@ -1,0 +1,131 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+	box-sizing: border-box;
+	text-align: center;
+	text-decoration: none;
+}
+body {
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+
+	color: #666;
+	position: relative;
+	margin: 0;
+}
+
+.global_container {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
+
+.btn {
+	color: white;
+	background-color: #3b5998;
+	border: solid #3b5998;
+	margin: 0;
+}
+
+#logo-tag {
+	font-family: 'Helvetica', sans-serif;
+	font-size: 50px;
+	padding: 10px;
+	color: white;
+	background-color: #3b5998;
+}
+
+.nav {
+	list-style-type: none;
+	text-align: center;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.nav li {
+	text-decoration: none;
+	padding: 2.5%;
+	font-size: 20px;
+}
+
+li a {
+	text-decoration: none;
+	display: block;
+	color: white;
+}
+
+li a:hover {
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 0 30px white;
+}
+
+ul {
+	list-style-type: none;
+	background-color: #3b5998;
+}
+
+.user_form {
+	background-color: white;
+	color: black;
+}
+
+.wrapper {
+	padding: 5px;
+	max-width: 100%;
+	width: 95%;
+	height: auto;
+	margin: 20px auto;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+	margin: 5px 0;
+}
+
+.column {
+	border: 2.5px solid #3b5998;
+	margin: 0.8%;
+	padding: 10px;
+	width: 25%;
+}
+
+.left-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+.right-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+#middle {
+	width: 45%;
+}
+
+#show-img {
+	height: auto;
+	width: 40%;
+}
+
+img {
+	height: 150px;
+	width: 150px;
+}
+
+.footer_container {
+		background-color: #3b5998;
+		margin: 0;
+}
+
+#footer_logo {
+	text-align: right;
+	color: white;
+	padding: 2%;
+	margin: 0;
+}

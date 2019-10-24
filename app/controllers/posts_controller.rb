@@ -2,19 +2,12 @@ class PostsController < ApplicationController
   before_action :find_post, only:[:show,:edit,:update,:destroy]
   before_action :check_if_user_has_perms, only: [:edit,:update,:destroy]
 
-  def show
-  end
-
-  def index
-    @posts = Post.all
-  end
-
   def new
     @post = Post.new
   end
 
   def create
-
+    
     @post = Post.new(post_params(:title, :content, :page_id))
     @post.user_id = current_user.id
     if @post.valid?

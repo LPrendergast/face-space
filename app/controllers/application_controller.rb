@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :authorize_user
   before_action :set_extra_info #, except: [:current_user, :authorize_user]
   #skip_before_action :set_extra_info, only: [:]
+  protect_from_forgery
 
   def current_user
     if session[:user_id]
