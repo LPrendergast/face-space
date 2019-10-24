@@ -16,8 +16,25 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def get_pages
-    Pages.find_by(user: self)
+  def page_count
+    pages.count
+  end
+
+  def post_count
+    posts.count
+  end
+
+  def time_since(time)
+    ((Time.current - time)/1.minutes).floor
+  end
+
+  def last_page_or_post(type)
+    time_since(type.last.created_at)
+  end
+
+
+  def total_views
+    pages.sum{|page| page.views}
   end
 
 
@@ -41,7 +58,7 @@ class User < ApplicationRecord
         end
     end
   end
-  
+
   friends
   end
 
@@ -80,8 +97,5 @@ class User < ApplicationRecord
     friends.count
   end
 
-
-
-  
 
 end

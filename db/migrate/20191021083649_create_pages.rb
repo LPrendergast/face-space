@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :content
       t.integer :user_id
+      t.integer :views, :default => 0
 
       t.timestamps
     end

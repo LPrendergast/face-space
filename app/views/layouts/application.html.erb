@@ -24,6 +24,14 @@
                 <h1><%=render "users/user_info"%></h1>
               <%end%>
             </div>
+
+             <div class="left-box" id="user-stats">
+              <%if current_user%>
+                <h1><%=render "users/user_stats"%></h1>
+              <%end%>
+            </div>
+
+
           </div>
 
           <div class="column" id="middle">
@@ -39,6 +47,12 @@
                   <%=render "sessions/login"%>
                 <%end%>
               </h1>
+            </div>
+
+            <div class="right-box" id="create-page">
+            <%if current_user%>
+               <%= button_to "Create Page", new_page_path, :class => "btn",method: :get%><br>
+            <%end%>
             </div>
 
             <div class="right-box" id="friends-list">
