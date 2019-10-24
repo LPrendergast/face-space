@@ -8,7 +8,7 @@
             <%if current_user.friend?(user)%>
                 <%= link_to "Accept Friend Request", add_friend_path(:user=>{friendee_id: user.id, friender_id: current_user.id}), method: :post%>
             <%else%>
-                <%= link_to "Add Friend.", add_friend_path(:user=>{friendee_id: user.id, friender_id: current_user.id}), method: :post%>
+                <%= link_to "Add Friend.", add_friend_path(:params => :user=>{friendee_id: user.id, friender_id: current_user.id})%>
             <%end%>
             
         <%end%>

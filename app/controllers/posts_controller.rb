@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-
+    
     @post = Post.new(post_params(:title, :content, :page_id))
     @post.user_id = current_user.id
     if @post.valid?
