@@ -1,8 +1,8 @@
-<%=form_tag page_search_path%>
-    <div>
-        <%= search_field_tag :search, params[:search], placeholder: "Search By Page Title"%>
-        <div>
-            <%= button_tag "Search Pages" %>
-        </div>
-    </div>
+<%=form_tag page_search_path, method: 'post', class: 'navbar-form navbar-left'%>
+<div class="input-group">
+  <%= search_field_tag :search, params[:search], placeholder: "Search By Page Title", class: "form-control" %>
+  <div class="input-group-btn">
+    <%= button_tag "Search Pages", :class=> "btn btn-info glyphicon glyphicon-search", name: nil %>
+  </div>
+</div>
 </form>
