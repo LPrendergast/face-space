@@ -6,7 +6,7 @@
 <p><%= @user.phone_number %></p>
 
 <% if @user == current_user %>
-<%=link_to "Edit User", edit_user_path(@user)%>
+<%=button_to "Edit User", edit_user_path(@user), method: :get%>
 <% end %>
 
 <br><h1> <%= @user.username%>'s Pages: </h1>
