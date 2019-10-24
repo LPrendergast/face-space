@@ -6,15 +6,15 @@
 <% @posts.each do |post| %>
 <h1>Title: <%=post.title%></h1>
 <% if post.user == current_user || @page.user == current_user %>
-<%= link_to "Edit post.", edit_post_path%>
-<%= link_to "Delete post.", post_path(post), method: :delete %>
+<%= button_to "Edit post.", edit_post_path, method: :get%>
+<%= button_to "Delete post.", post_path(post), method: :delete %>
 <% end %>
 <h2>Post Author: <%=link_to post.user.username, user_path(post.user)%></h2>
 <p>Content: <%= post.content %></p><br>
 <%end%>
 
 <% if @page.user == current_user %>
-<%=link_to "Edit Page", edit_page_path(@page)%>
-<%= link_to "Delete Page.", page_path(@page), method: :delete %>
+<%=button_to "Edit Page", edit_page_path(@page), method: :get%>
+<%= button_to "Delete Page.", page_path(@page), method: :delete %>
 <% end %>
-<%= link_to "Post a post", new_post_path(:page_id => @page.id)%>
+<%= button_to "Post a post", new_post_path , params: {:page_id => @page.id}, method: :get%>
