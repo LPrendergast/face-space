@@ -4,5 +4,9 @@ Posts: <%=current_user.post_count%><br>
 Minutes Active: <%=current_user.time_since(current_user.created_at)%><br>
 Total Page views: <%=current_user.total_views%><br>
 Last Update: <%=current_user.time_since(current_user.updated_at)%> minutes ago<br>
+<%if current_user.page_count > 0%>
 Last Page: <%= current_user.last_page_or_post(current_user.pages)%> minutes ago<br>
+<%end%>
+<%if current_user.post_count > 0%>
 Last Post: <%= current_user.last_page_or_post(current_user.posts)%> minutes ago</p>
+<%end%>
