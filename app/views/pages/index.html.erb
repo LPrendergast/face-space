@@ -1,7 +1,5 @@
 <%= render 'search'%>
-<%if current_user%>
-<%= link_to "Create Page", new_page_path%><br>
-<%end%>
+
 <% if @pages != []%>
 <% @pages.each do |page| %>
 
