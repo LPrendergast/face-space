@@ -1,4 +1,4 @@
-<h1>Friend Count: <%=current_user.friend_count%></h1>
+<h5>Friend Count: <%=current_user.friend_count%></h5>
 <% current_user.friends.each do |friend|%>
-<h1><%= link_to friend.username, user_path(friend)%> - <%=link_to "Message", messages_path(friend: friend)%> - <%=link_to "Delete", friendship_path(:id => current_user.get_friendship(friend).first.id), method: :delete%></h1>
+<h5><%= link_to friend.username, user_path(friend)%> - <%=link_to "Message", messages_path(friend: friend)%> - <%=link_to "Delete", friendship_path(:id => current_user.get_friendship(friend).first.id), method: :delete%></h5>
 <% end %>

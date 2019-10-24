@@ -12,53 +12,49 @@
 
   <body>
     <div class="global_container">
-    <div class="top_container">
-    <%= render 'layouts/navigation'%>
-    </div>
+      <div class="top_container">
+        <%= render 'layouts/navigation'%>
+      </div>
 
+      <div class="wrapper">
+        <section class="columns">
+          <div class="column" id="left">
+            <div class="left-box" id="user-info">
+              <%if current_user%>
+                <h1><%=render "users/user_info"%></h1>
+              <%end%>
+            </div>
+          </div>
 
-<div class="wrapper">
-    <section class="columns">
-    <div class="column" id="left">
-      <div class= "left-box" id="user-info">
-      <%if current_user%>
-        <h1><%=render "users/user_info"%></h1>
-      <%end%>
+          <div class="column" id="middle">
+            <%= yield %>
+          </div>
+          <div class="column" id="right">
+
+            <div class="right-box" id="log-in">
+              <h1>
+                <%if current_user %>
+                  <%="Hello " + current_user.username%>
+                <%else%>
+                  <%=render "sessions/login"%>
+                <%end%>
+              </h1>
+            </div>
+
+            <div class="right-box" id="friends-list">
+              <h4>Friends List</h4>
+              <%if current_user%>
+                <%= render partial: "users/friends_list"%>
+              <%end%>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer_container">
+        <%= render 'layouts/footer'%>
       </div>
     </div>
 
-    <div class="column" id="middle">
-      <%= yield %>
-    </div>
-    <div class="column" id="right">
-
-      <div class= "right-box" id="log-in">
-        <h1>
-        <%if current_user %>
-          <%="Hello " + current_user.username%>
-        <%else%>
-          <%=render "sessions/login"%>
-        <%end%>
-        </h1>
-      </div>
-
-    
-
-      <div class= "right-box" id="friends-list">
-        <h1>Friends List</h1>
-        <%if current_user%>
-        <%= render partial: "users/friends_list"%>
-        <%end%>
-      </div>
-    </div>
-    </section>
-</div>
-
-
-
-<div class="footer_container">
- <%= render 'layouts/footer'%>
-</div>
-  </div>
   </body>
 </html>
