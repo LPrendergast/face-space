@@ -7,8 +7,8 @@
 }
 body {
 	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-
-	color: #666;
+	background-color: #ffd5d5;
+	color: #45454d;
 	position: relative;
 	margin: 0;
 }
@@ -21,18 +21,18 @@ body {
 
 
 .btn {
-	color: white;
-	background-color: #3b5998;
-	border: solid #3b5998;
-	margin: 0;
+	color: #ffd5d5;
+	background-color: #45454d;
+	border: solid #45454d;
+	margin: 5px;
 }
 
 #logo-tag {
 	font-family: 'Helvetica', sans-serif;
 	font-size: 50px;
 	padding: 10px;
-	color: white;
-	background-color: #3b5998;
+	color: #ffd5d5;
+	background-color: #45454d;
 }
 
 .nav {
@@ -52,25 +52,37 @@ body {
 li a {
 	text-decoration: none;
 	display: block;
-	color: white;
+	color: #ffd5d5;
 }
 
 li a:hover {
-	color: white;
+	color: #ffd5d5;
 	text-decoration: none;
-	text-shadow: 0 0 10px white;
+	text-shadow: 0 0 10px #b1e8ed;
 }
 
 ul {
 	list-style-type: none;
-	background-color: #3b5998;
+	background-color: #45454d;
 }
 
 .user_form {
-	background-color: white;
+	color: black;
+	background-color: #e1e1e1;
+}
+
+a{
 	color: black;
 }
 
+a:hover{
+	text-decoration: none;
+	color: black;
+	text-shadow: 0 0 10px black;
+}
+.new_page{
+	background-color: #e1e1e1;
+}
 .wrapper {
 	padding: 5px;
 	max-width: 100%;
@@ -88,10 +100,11 @@ ul {
 }
 
 .column {
-	border: 2.5px solid #3b5998;
+	border: 2.5px solid #45454d;
 	margin: 0.8%;
 	padding: 10px;
 	width: 25%;
+	background-color: #e1e1e1;
 }
 
 .left-box {
@@ -116,16 +129,17 @@ ul {
 img {
 	height: 150px;
 	width: 150px;
+	border-radius: 50%;
 }
 
 .footer_container {
-		background-color: #3b5998;
+		background-color: #45454d;
 		margin: 0;
 }
 
 #footer_logo {
 	text-align: right;
-	color: white;
+	color: #ffd5d5;
 	padding: 2%;
 	margin: 0;
 }

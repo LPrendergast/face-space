@@ -5,4 +5,8 @@
   <li>Current amount of Posts: <%= @posts.count %></li>
   <li>Current amount of Friendships: <%= @friendships.count %></li>
   <li>Current amount of Messages: <%= @messages.count %></li>
-  Total amount of page views: <li><%= Page.total_amount_views %></li>
+  <li>Total amount of page views: <%= Page.total_amount_views %></li>
+  <li>The first account ever created: <%= @first_user.username %></li>
+  <li>The newest account created: <%= @newest_user.username %></li>
+  <li>The first post ever created: <%= @oldest_post.title %></li>
+  <li>The newest post created: <%= @newest_post.title %></li>

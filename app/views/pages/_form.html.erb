@@ -4,12 +4,12 @@
     <%=msg%><br>
     <%end%>
 <%end%>
-<ul>
+<ul class = "new_page">
   <%=form_for(@page) do |f| %>
   <%=f.label :title%>
-  <%=f.text_field :title%>
+  <li><%=f.text_field :title%></li>
   <%=f.label :content%>
-  <%=f.text_area :content%>
-  <%=f.submit%>
+  <li><%=f.text_area :content%></li>
+  <%=f.submit"Submit Page", :class => "btn"%>
   <%end%>
 </ul>

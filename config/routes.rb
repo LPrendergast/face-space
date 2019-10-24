@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create,:index]
   resources :friendships, only: [:destroy]
   resources :analytics, only: [:show]
-  
+
   post '/', to: 'sessions#create', as: "sessions"
   delete '/', to: 'sessions#destroy', as: "logout"
   get '/', to: 'users#new', as: "sign_up"

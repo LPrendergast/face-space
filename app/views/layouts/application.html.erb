@@ -31,7 +31,7 @@
               <%end%>
             </div>
 
-            
+
           </div>
 
           <div class="column" id="middle">
@@ -51,9 +51,9 @@
 
             <div class="right-box" id="create-page">
             <%if current_user%>
-               <%= button_to "Create Page", new_page_path, method: :get%><br>
+               <%= button_to "Create Page", new_page_path, :class => "btn",method: :get%><br>
             <%end%>
-            </div> 
+            </div>
 
             <div class="right-box" id="friends-list">
               <h4>Friends List</h4>
