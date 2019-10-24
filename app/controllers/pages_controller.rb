@@ -6,6 +6,11 @@ class PagesController < ApplicationController
     @posts = @page.posts
   end
 
+  def search
+    @pages = Page.all.where("title LIKE ?", "#{params[:search]}%")
+    render :index
+  end
+
   def index
     @pages = Page.all
   end
