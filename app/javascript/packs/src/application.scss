@@ -1,83 +1,82 @@
-@import '~bootstrap/scss/bootstrap';@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import '~bootstrap/scss/bootstrap';
 
 * {
 	box-sizing: border-box;
 	text-align: center;
-}
-.global_container{
-
-}
-
-#logo-tag{
-	font-family: 'Helvetica', sans-serif;
+	text-decoration: none;
 }
 body {
-  font-family: 'Helvetica', sans-serif;
-  color: #666;
-}
-img {
-	height: 150px;
-	width: 150px;
-}
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 
-.left-box {
-	width: 100%;
-
-	overflow:hidden;
+	color: #666;
+	position: relative;
+	margin: 0;
 }
 
-.right-box {
-	width: 100%;
-
-	overflow:hidden;
+.global_container {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
 }
 
 
+.btn {
+	color: white;
+	background-color: #3b5998;
+	border: solid #3b5998;
+	margin: 0;
+}
 
-#logo-tag{
+#logo-tag {
 	font-family: 'Helvetica', sans-serif;
-  font-size: 100px;
-  color: white;
-  background-color: #3b5998 ;
-  padding:0;
+	font-size: 50px;
+	padding: 10px;
+	color: white;
+	background-color: #3b5998;
 }
 
 .nav {
-  list-style-type: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	text-align: center;
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 
 .nav li {
-  display: inline-block;
-  font-size: 20px;
-  padding: 20px;
+	text-decoration: none;
+	padding: 2.5%;
+	font-size: 20px;
 }
-li a{
-  text-decoration: none;
-  display: inline;
-  color: white;
+
+li a {
+	text-decoration: none;
+	display: block;
+	color: white;
 }
 
 li a:hover {
-  background-color: #87D3FE;
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 0 30px white;
 }
 
 ul {
- list-style-type: none;
- background-color: #3b5998;
- }
+	list-style-type: none;
+	background-color: #3b5998;
+}
+
+.user_form {
+	background-color: white;
+	color: black;
+}
 
 .wrapper {
 	padding: 5px;
-	max-width: 100%; /*used to be 960*/
+	max-width: 100%;
 	width: 95%;
 	height: auto;
 	margin: 20px auto;
-}
-header {
-	padding: 0 15px;
 }
 
 .columns {
@@ -89,30 +88,44 @@ header {
 }
 
 .column {
-
-	border: 1px solid #3b5998;
-	margin: 2px;
+	border: 2.5px solid #3b5998;
+	margin: 0.8%;
 	padding: 10px;
 	width: 25%;
-
 }
-#middle{
+
+.left-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+.right-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+#middle {
 	width: 45%;
 }
-
-.footer_container {
-	padding: 0 15px;
-	background-color: #3b5998;
-}
-
-#footer_logo{
-	text-align: left;
-	color:white;
-	padding: 20px 20px 20px 20px;
-}
-
 
 #show-img {
 	height: auto;
 	width: 40%;
+}
+
+img {
+	height: 150px;
+	width: 150px;
+}
+
+.footer_container {
+		background-color: #3b5998;
+		margin: 0;
+}
+
+#footer_logo {
+	text-align: right;
+	color: white;
+	padding: 2%;
+	margin: 0;
 }
