@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
   def show
     @posts = @page.posts
+    @page.views +=1
+    @page.save
   end
 
   def search

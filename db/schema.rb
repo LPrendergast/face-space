@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_164857) do
     t.string "title"
     t.string "content"
     t.integer "user_id"
+    t.integer "views", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
