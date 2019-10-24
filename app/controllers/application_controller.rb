@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_extra_info #, except: [:current_user, :authorize_user]
   #skip_before_action :set_extra_info, only: [:]
   protect_from_forgery
-
+  
   def show
     
   end
