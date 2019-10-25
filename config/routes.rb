@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create,:index]
   resources :friendships, only: [:destroy]
   resources :analytics, only: [:show]
+  get '/auth/spotify/callback', to: 'users#spotify'
 
   post '/', to: 'sessions#create', as: "sessions"
   delete '/', to: 'sessions#destroy', as: "logout"
