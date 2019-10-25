@@ -9,8 +9,6 @@
 <p>City: <%= @user.city %></p>
 <p>Phone Number: <%= @user.phone_number %></p>
 
-<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
-
 <% if @user == current_user %>
 <%=button_to "Edit User", edit_user_path(@user), :class => "btn",method: :get%>
 <% end %>
