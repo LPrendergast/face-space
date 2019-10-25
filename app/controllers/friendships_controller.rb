@@ -1,12 +1,15 @@
 class FriendshipsController < ApplicationController
     before_action :authorize_user
     def create
+        
         @friendship = Friendship.create(friendship_params)
         if @friendship.valid?
+            
             redirect_to users_path
         else
             #flashy boy
-            redirect_to request.referrer
+            
+            redirect_to users_path
         end
     end
 
