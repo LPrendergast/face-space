@@ -7,4 +7,7 @@
 
       <%= submit_tag "Log in", :class => "btn"%>
   <% end %>
-  <%=link_to "Sign Up", sign_up_path,:class => "btn"%>
+
+  <%unless current_page?('/')%>
+    <%=link_to "Sign Up", sign_up_path,:class => "btn"%>
+  <%end%>

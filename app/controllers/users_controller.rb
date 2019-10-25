@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit update]
   before_action :check_user_belongs_to_current_user, only: %i[edit update]
-  
-
+  before_action :authorize_user, except: [:index, :show, :new]
   
   def show
     @posts = @user.posts
