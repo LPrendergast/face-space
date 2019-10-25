@@ -26,7 +26,9 @@
       <%= f.label :image_url %>
       <li><%= f.text_field :image_url %></li>
       <%= f.label :song%>
-      <li><%= f.text_field :song, value: "Search Here"%></li>
+      
+      <li><%= f.text_field :song, value: "Enter Song Name"%></li>
+      
       <%=f.submit "Submit", :class => "btn"%>
   <%end%>
 </ul>
