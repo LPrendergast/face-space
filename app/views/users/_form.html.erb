@@ -25,6 +25,10 @@
       <li><%= f.text_field :phone_number %></li>
       <%= f.label :image_url %>
       <li><%= f.text_field :image_url %></li>
+      <%= f.label :song%>
+      
+      <li><%= f.text_field :song,value: nil, placeholder: "Enter Song Name"%></li>
+      
       <%=f.submit "Submit", :class => "btn"%>
   <%end%>
 </ul>

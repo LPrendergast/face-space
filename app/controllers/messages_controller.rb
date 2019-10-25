@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
-    
-    
+    before_action :authorize_user
     def index
         @messages = Message.all
     end

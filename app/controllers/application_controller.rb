@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_extra_info #, except: [:current_user, :authorize_user]
   #skip_before_action :set_extra_info, only: [:]
   protect_from_forgery
-
+  
   def show
     
   end
@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
 
   def authorize_user
     unless current_user
-      flash[:notice] = "Please Login."
-      redirect_to new_session
+      #add flash
+      redirect_to sign_up_path
     end
   end
 

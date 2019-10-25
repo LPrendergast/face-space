@@ -1,12 +1,13 @@
 
 <% current_user.messages(params[:friend]).each do |message|%>
-<h2><%=message.format_time%> - <%=message.user.username%>: <%= message.content%><br>
+<div class="messaging">
+  <%=message.format_time%> - <%=message.user.username%>: <%= message.content%><br>
+</div>
 <%end%>
 
 <%@message = Message.new%>
 <%= form_for @message, action: :create  do |f|%>
-<%= f.label :content%>
-<%= f.text_area :content%>
+<li><%= f.text_area :content%></li>
 <%=f.hidden_field :friendship_id, :value => current_user.get_friendship(User.get_friend(params[:friend])).first.id%>
-<%= f.submit%>
+<%= f.submit"Send Message", :class => "btn"%>
 <% end %>

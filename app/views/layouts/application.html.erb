@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%=favicon_link_tag%>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,7 +40,11 @@
             <%= yield %>
           </div>
           <div class="column" id="right">
-
+          <div class="right-box" id="spotify-div">
+          <%if current_user%>
+          <iframe src="https://open.spotify.com/embed/track/<%=current_user.song%>" class="spotify" allow="encrypted-media"></iframe>
+          <%end%>
+          </div>
             <div class="right-box" id="log-in">
               <h1>
                 <%if current_user %>
@@ -56,8 +62,8 @@
             </div>
 
             <div class="right-box" id="friends-list">
-              <h4>Friends List</h4>
               <%if current_user%>
+              <h4>Friends List</h4>
                 <%= render partial: "users/friends_list"%>
               <%end%>
             </div>
