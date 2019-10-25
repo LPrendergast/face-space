@@ -1,12 +1,12 @@
 
 <h1>Website Analytics.</h1>
-  <li>Current amount of Users: <%= @users.count %></li>
-  <li>Current amount of Pages: <%= @pages.count %></li>
-  <li>Current amount of Posts: <%= @posts.count %></li>
-  <li>Current amount of Friendships: <%= @friendships.count %></li>
-  <li>Current amount of Messages: <%= @messages.count %></li>
-  <li>Total amount of page views: <%= Page.total_amount_views %></li>
-  <li>The first account ever created: <%= @first_user.username %></li>
-  <li>The newest account created: <%= @newest_user.username %></li>
-  <li>The first post ever created: <%= @oldest_post.title %></li>
-  <li>The newest post created: <%= @newest_post.title %></li>
+  <li>Current amount of Users: </li> <%= @users.count %>
+  <li>Current amount of Pages: </li><%= @pages.count %>
+  <li>Current amount of Posts: </li><%= @posts.count %>
+  <li>Current amount of Friendships: </li><%= @friendships.count %>
+  <li>Current amount of Messages: </li><%= @messages.count %>
+  <li>Total amount of page views: </li><%= Page.total_amount_views %>
+  <li>The first account ever created: </li><%=link_to @first_user.username, @first_user%>
+  <li>The newest account created: </li><%=link_to @newest_user.username,@newest_user%>
+  <li>The first post ever created: </li><%=link_to @oldest_post.title, @oldest_post.page %>
+  <li>The newest post created: </li> <%=link_to @newest_post.title, @newest_post.page%>
