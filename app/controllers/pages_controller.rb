@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :check_page_belongs_to_user, only: [:edit, :update, :destroy]
   before_action :find_page, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:index, :show, :search]
 
   def show
     @posts = @page.posts
