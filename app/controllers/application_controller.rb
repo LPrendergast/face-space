@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
 
   def authorize_user
     unless current_user
-      flash[:notice] = "Please Login."
-      redirect_to new_session
+      #add flash
+      redirect_to sign_up_path
     end
   end
 
