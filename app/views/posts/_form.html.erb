@@ -7,12 +7,12 @@
 
 <%= form_for @post do |f| %>
 <%= f.label :title %>
-<%= f.text_field :title %>
+<li><%= f.text_field :title %></li>
 <%= f.label :content %>
-<%= f.text_area :content %>
+<li><%= f.text_area :content %></li>
 <%if params[:page_id] || defined?(page_id) %>
 <%= f.hidden_field(:page_id, :value => params[:page_id] || page_id)%>
 <%end%>
 
-<%= f.submit "Submit Post" %>
+<%= f.submit "Submit Post", :class => "btn" %>
 <% end %>
