@@ -2,7 +2,8 @@
 <iframe src="https://open.spotify.com/embed/track/<%=@user.song%>" class="spotify" allow="encrypted-media"></iframe>
 <h1><%=@user.username %></h1><br>
 <img src=<%=@user.image_url%> id=show-img">
-<p><%= @user.bio %> Age:<%= @user.age %></p>
+<p class="user_bio"><%= @user.bio %></p>
+<p>Age:<%= @user.age %></p>
 <p>Hobbies: <%= @user.hobbies %></p>
 <p>Country: <%= @user.country %></p>
 <p>City: <%= @user.city %></p>
