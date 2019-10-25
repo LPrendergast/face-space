@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :authorize_user, only: %i[edit update]
   
   def show
+    
     @posts = @user.posts
     @pages = @user.pages
   end
