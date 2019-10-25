@@ -28,8 +28,13 @@ class UsersController < ApplicationController
 
   def create
 
-    @user = User.create(user_params(:username, :password, :bio, :hobbies, :age, :country, :city, :phone_number, :image_url))
+    @user = User.create(user_params(:username, :password, :bio, :hobbies, :age, :country, :city, :phone_number))
+    unless params[:user][:song] == ""
     @user.song = RSpotify::Track.search(params[:user][:song])[0].id
+    end
+    unless params[:user][:image_url] == ""
+    @user.image_url = params[:user][:image_url]
+    end
     @user.save
     if @user.valid?
       session[:user_id] = @user.id
@@ -43,7 +48,16 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params(:username, :password, :bio, :hobbies, :age, :country, :city, :phone_number, :image_url))
-    @user.song = RSpotify::Track.search(params[:user][:song])[0].id
+    if params[:user][:song] == ""
+      @user.song = "5ZrDlcxIDZyjOzHdYW1ydr"
+    else
+      @user.song = RSpotify::Track.search(params[:user][:song])[0].id
+      end
+      if params[:user][:image_url] == ""
+        @user.image_url = "https://252radio.com/wp-content/uploads/2016/11/default-user-image-300x300.png"
+      else
+      @user.image_url = params[:user][:image_url]
+      end
     @user.save
     if @user.valid?
       redirect_to @user
