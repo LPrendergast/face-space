@@ -1,9 +1,9 @@
   <%= form_tag(sessions_path) do %>
       <%= label :user, :username %>
-      <%= text_field :user, :username %>
+      <%= text_field :user, :username, :class => "login_box" %>
 
       <%= label :user, :password %>
-      <%= password_field :user, :password %>
+      <%= password_field :user, :password, :class => "login_box" %>
 
       <%= submit_tag "Log in", :class => "btn"%>
   <% end %>
