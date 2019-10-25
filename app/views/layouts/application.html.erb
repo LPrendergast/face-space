@@ -31,14 +31,18 @@
               <%end%>
             </div>
 
-            
+
           </div>
 
           <div class="column" id="middle">
             <%= yield %>
           </div>
           <div class="column" id="right">
-
+          <div class="right-box" id="spotify-div">
+          <%if current_user%>
+          <iframe src="https://open.spotify.com/embed/track/<%=current_user.song%>" class="spotify" allow="encrypted-media"></iframe>
+          <%end%>
+          </div>
             <div class="right-box" id="log-in">
               <h1>
                 <%if current_user %>
@@ -51,9 +55,9 @@
 
             <div class="right-box" id="create-page">
             <%if current_user%>
-               <%= button_to "Create Page", new_page_path, method: :get%><br>
+               <%= button_to "Create Page", new_page_path, :class => "btn",method: :get%><br>
             <%end%>
-            </div> 
+            </div>
 
             <div class="right-box" id="friends-list">
               <h4>Friends List</h4>
