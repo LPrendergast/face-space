@@ -19,4 +19,6 @@
 <%=button_to "Edit Page", edit_page_path(@page), :class => "btn",method: :get%>
 <%= button_to "Delete Page.", page_path(@page), :class => "btn",method: :delete %>
 <% end %>
+<% if current_user%>
 <%= button_to "Post a post", new_post_path , params: {:page_id => @page.id}, :class => "btn",method: :get%>
+<%end%>
