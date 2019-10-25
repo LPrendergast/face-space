@@ -1,12 +1,29 @@
 
 <h1>Website Analytics.</h1>
+
+  <%if @users%>
   <li>Current amount of Users: </li> <%= @users.count %>
+  <%end%>
+  <%if @pages%>
   <li>Current amount of Pages: </li><%= @pages.count %>
+  <%end%>
+  <%if @posts%>
   <li>Current amount of Posts: </li><%= @posts.count %>
+  <%end%>
+  <%if @friendships%>
   <li>Current amount of Friendships: </li><%= @friendships.count %>
+  <%end%>
+  <%if @messages%>
   <li>Current amount of Messages: </li><%= @messages.count %>
+  <%end%>
+  <%if @pages%>
   <li>Total amount of page views: </li><%= Page.total_amount_views %>
+  <%end%>
+  <%if @users%>
   <li>The first account ever created: </li><%=link_to @first_user.username, @first_user%>
   <li>The newest account created: </li><%=link_to @newest_user.username,@newest_user%>
+  <%end%>
+  <%if @posts%>
   <li>The first post ever created: </li><%=link_to @oldest_post.title, @oldest_post.page %>
   <li>The newest post created: </li> <%=link_to @newest_post.title, @newest_post.page%>
+  <%end%>

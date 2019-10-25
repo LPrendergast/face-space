@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   delete '/', to: 'sessions#destroy', as: "logout"
   get '/', to: 'users#new', as: "sign_up"
 
+  get '/pages-search', to: 'pages#index'
+  get '/users-search', to: 'pages#show'
+
 
   post '/friendships', to: 'friendships#create', as: "add_friend"
 
